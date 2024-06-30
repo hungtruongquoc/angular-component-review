@@ -335,7 +335,7 @@
 
 <router-outlet />
 
-<app-counter [counter]="10" (counterChanged)="onCountChange($event)"/>
+<app-counter [counter]="10" (counterChanged)="onCountChange($event)" (inputChange)="onCountChange($event)"/>
 <p>{{countDisplay}}</p>
 <ul highlighted>
   <li *ngFor="let joke of jokes">

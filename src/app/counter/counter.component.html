@@ -2,7 +2,7 @@
 <p [ngClass]="{'text-bold': counter > 6}">{{counter}}</p>
 <button (click)="increase($event)">Increase</button>
 <button *ngIf="counter > 0" (click)="decrease($event)">Decrease</button>
-<input type="number" [(ngModel)]="counter" />
+<input type="number" [(ngModel)]="counter" #countInput />
 
 <ul>
   <li *ngFor="let item of buttonList">
