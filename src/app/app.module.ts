@@ -8,6 +8,8 @@ import {FormsModule} from "@angular/forms";
 import {JokeApiService} from "./services/JokeApiService";
 import {HighlightedDirectives} from "./directives/highlighted.directives";
 import {CustomUpperCasePipe} from "./pipes/upper_case.pipe";
+import { StoreModule } from '@ngrx/store';
+import {themeReducer} from "./store/theme.reducer";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import {CustomUpperCasePipe} from "./pipes/upper_case.pipe";
     BrowserModule,
     AppRoutingModule,
     FormsModule, // Required to use ngModel,
-    HttpClientModule
+    HttpClientModule, StoreModule.forRoot({theme: themeReducer})
   ],
   providers: [JokeApiService],
   bootstrap: [AppComponent]
