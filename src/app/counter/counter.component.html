@@ -1,0 +1,10 @@
+<p>counter works!</p>
+<p>{{counter}}</p>
+<button (click)="increase($event)">Increase</button>
+<input type="number" [(ngModel)]="counter" />
+
+<ul>
+  <li *ngFor="let item of buttonList">
+    <button>{{item.label}}</button>
+  </li>
+</ul>
