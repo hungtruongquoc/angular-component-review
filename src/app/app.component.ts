@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {count} from "rxjs";
+import {count, Observable} from "rxjs";
 import {JokeApiService} from "./services/JokeApiService";
 
 @Component({
@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'my-project';
   countDisplay: string = "Has changed to"
   jokes: any[] = [];
+  joke$: Observable<any>
 
   constructor(private jokeService: JokeApiService) {
   }
@@ -23,5 +24,6 @@ export class AppComponent {
     this.jokeService.getJoke().subscribe((data) => {
       this.jokes.push(data);
     });
+    this.joke$ = this.jokeService.getJoke();
   }
 }

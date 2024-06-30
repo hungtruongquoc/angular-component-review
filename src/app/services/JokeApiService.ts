@@ -9,6 +9,6 @@ export class JokeApiService {
   }
 
   public getJoke(): Observable<any> {
-    return this.http.get("https://icanhazdadjoke.com/", {headers: {Accept: "application/json"}})
+    return this.http.get<any>("https://icanhazdadjoke.com/", {headers: {Accept: "application/json"}})
   }
 }

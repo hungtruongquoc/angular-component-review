@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import {FormsModule} from "@angular/forms";
 import {JokeApiService} from "./services/JokeApiService";
+import {HighlightedDirectives} from "./directives/highlighted.directives";
+import {CustomUpperCasePipe} from "./pipes/upper_case.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    HighlightedDirectives,
+    CustomUpperCasePipe
   ],
   imports: [
     BrowserModule,
