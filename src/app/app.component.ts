@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {count} from "rxjs";
+import {JokeApiService} from "./services/JokeApiService";
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,14 @@ export class AppComponent {
   title = 'my-project';
   countDisplay: string = "Has changed to"
 
+  constructor(private jokeService: JokeApiService) {
+  }
+
   onCountChange(count: number) {
     this.countDisplay = `${this.countDisplay} ${count}`
   }
 
-  protected readonly count = count;
+  ngOnInit() {
+    this.jokeService.getJoke().subscribe((data) => {console.log(data)});
+  }
 }

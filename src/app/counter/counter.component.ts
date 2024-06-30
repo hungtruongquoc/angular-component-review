@@ -14,4 +14,9 @@ export class CounterComponent {
     this.counter++;
     this.counterChanged.emit(this.counter);
   }
+
+  public decrease(event) {
+    this.counter--;
+    this.counterChanged.emit(this.counter);
+  }
 }

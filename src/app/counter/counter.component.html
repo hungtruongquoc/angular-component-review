@@ -1,6 +1,7 @@
 <p>counter works!</p>
-<p>{{counter}}</p>
+<p [ngClass]="{'text-bold': counter > 6}">{{counter}}</p>
 <button (click)="increase($event)">Increase</button>
+<button *ngIf="counter > 0" (click)="decrease($event)">Decrease</button>
 <input type="number" [(ngModel)]="counter" />
 
 <ul>
@@ -8,3 +9,5 @@
     <button>{{item.label}}</button>
   </li>
 </ul>
+
+
