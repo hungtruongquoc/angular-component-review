@@ -10,6 +10,7 @@ import {JokeApiService} from "./services/JokeApiService";
 export class AppComponent {
   title = 'my-project';
   countDisplay: string = "Has changed to"
+  jokes: any[] = [];
 
   constructor(private jokeService: JokeApiService) {
   }
@@ -19,6 +20,8 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.jokeService.getJoke().subscribe((data) => {console.log(data)});
+    this.jokeService.getJoke().subscribe((data) => {
+      this.jokes.push(data);
+    });
   }
 }

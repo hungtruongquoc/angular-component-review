@@ -337,3 +337,8 @@
 
 <app-counter [counter]="10" (counterChanged)="onCountChange($event)"/>
 <p>{{countDisplay}}</p>
+<ul>
+  <li *ngFor="let joke of jokes">
+    {{joke.joke}}
+  </li>
+</ul>
